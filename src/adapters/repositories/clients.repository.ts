@@ -3,7 +3,7 @@ import { ClientEntity } from "../../domain/entities/clients/client.entity"
 import { ArrayDatabase } from "../../infrastructure/persistence/array.database";
 import { IClientsRepository } from "../../domain/repositories/clients.repository.interface";
 
-class ClientsRepository implements IClientsRepository {
+export class ClientsRepository implements IClientsRepository {
     private _type: string = 'client';
 
     constructor(private _database: IDatabase){
@@ -27,7 +27,7 @@ class ClientsRepository implements IClientsRepository {
     }
 
     async deleteById(resourceId: number): Promise<void> {
-        this._database.create(this._type, resourceId);
+        this._database.delete(this._type, resourceId);
     }
 
     async list(): Promise<ClientEntity[]> {

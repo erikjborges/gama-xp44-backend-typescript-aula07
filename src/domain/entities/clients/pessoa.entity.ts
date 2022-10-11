@@ -5,7 +5,7 @@ export interface IPessoaEntity {
     endereco?: IAddressEntity,
     cep: string,
     limiteCredito: number,
-    dataCadastro: Date,
-    dataAtualizacao: Date,
+    dataCadastro?: Date,
+    dataAtualizacao?: Date,
     observacoes: string
 }

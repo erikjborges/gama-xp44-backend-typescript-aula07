@@ -23,7 +23,7 @@ export class ArrayDatabase implements IDatabase {
             this._data[type] = [];
         }
 
-        data.indexId = this._data[type].length;
+        data.indexId = this._data[type] ? this._data[type].length : 0;
         obj = data;
         this._data[type].push(obj);
 

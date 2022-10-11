@@ -2,11 +2,11 @@ import { ClientEntity } from "../../entities/clients/client.entity";
 import { IClientsRepository } from "../../repositories/clients.repository.interface";
 import ClientsRepository from "../../../adapters/repositories/clients.repository";
 import { IUseCase } from "../usecase.interface";
-import { ViaCepFactory } from "../../../infrastructure/apis/viacepfactory.api";
-import { ApiCepFactory } from "../../../infrastructure/apis/apicepfactory.api";
+import { ViaCepFactory } from "../../../infrastructure/apis/cep/viacepfactory.api";
+import { ApiCepFactory } from "../../../infrastructure/apis/cep/apicepfactory.api";
 import { CepFactory } from "../../../adapters/connectors/cepfactory.api";
 
-class CreateClientUseCase implements IUseCase {
+export class CreateClientUseCase implements IUseCase {
 
     constructor(private _repository: IClientsRepository, private _viaCep: CepFactory, private _apiCep: CepFactory) {
 
